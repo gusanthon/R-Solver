@@ -52,7 +52,11 @@ if __name__ == "__main__":
 
     parser.add_argument('--verbose', action='store_const', const=True,
                         help='Use this flag to have the solver print extra intermediate information')
-    parser.set_defaults(verbose=False)
+
+    parser.add_argument('--pywdf', action='store_const', const=True,
+                        help='Use this flag to generate code for pywdf circuit')
+
+    parser.set_defaults(verbose=False, pywdf=False)
 
     args = parser.parse_args()
     main(args)
